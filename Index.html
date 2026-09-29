@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LDKS 2026 - Siska Mulya Asih</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #111827, #1e3a8a);
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    /* ANIMASI SCAN */
+    .scanner {
+      animation: fadeOut 1s ease 2.5s forwards;
+    }
+
+    .scan-box {
+      width: 220px;
+      height: 220px;
+      margin: auto;
+      border: 3px solid #60a5fa;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(96,165,250,.7);
+    }
+
+    .scan-line {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: #38bdf8;
+      box-shadow: 0 0 15px #38bdf8;
+      animation: scan 1.3s infinite alternate;
+    }
+
+    .scanner h2 {
+      margin-top: 25px;
+      font-size: 22px;
+    }
+
+    .scanner p {
+      margin-top: 8px;
+      color: #bfdbfe;
+    }
+
+    /* KARTU */
+    .card {
+      display: none;
+      animation: cardIn 1s ease forwards;
+    }
+
+    .card-box {
+      padding: 30px 22px;
+      border-radius: 25px;
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,.2);
+      box-shadow: 0 15px 40px rgba(0,0,0,.4);
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #93c5fd;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .data {
+      text-align: left;
+    }
+
+    .item {
+      margin-bottom: 16px;
+    }
+
+    .label {
+      font-size: 11px;
+      color: #93c5fd;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .value {
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .number {
+      margin-top: 22px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(37,99,235,.35);
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #bfdbfe;
+    }
+
+    @keyframes scan {
+      from {
+        top: 0;
+      }
+      to {
+        top: calc(100% - 4px);
+      }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: scale(.8) translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ANIMASI SCAN -->
+    <div class="scanner">
+      <div class="scan-box">
+        <div class="scan-line"></div>
+      </div>
+
+      <h2>Memverifikasi Data...</h2>
+      <p>Mohon tunggu sebentar</p>
+    </div>
+
+    <!-- DATA PANITIA -->
+    <div class="card">
+      <div class="card-box">
+
+        <div class="logo">LDKS 2026</div>
+
+        <div class="subtitle">
+          DATA PANITIA TERVERIFIKASI
+        </div>
+
+        <div class="data">
+
+          <div class="item">
+            <div class="label">Nama</div>
+            <div class="value">Siska Mulya Asih</div>
+          </div>
+
+          <div class="item">
+            <div class="label">Jabatan</div>
+            <div class="value">Hubungan Masyarakat</div>
+          </div>
+
+          <div class="item">
+            <div class="label">Kelas</div>
+            <div class="value">XII Merdeka 1</div>
+          </div>
+
+          <div class="item">
+            <div class="label">Ekstrakurikuler</div>
+            <div class="value">English Club</div>
+          </div>
+
+        </div>
+
+        <div class="number">
+          NOMOR PANITIA: LDKS-01
+        </div>
+
+        <div class="footer">
+          PANITIA LDKS 2026
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    setTimeout(function() {
+      document.querySelector(".scanner").style.display = "none";
+      document.querySelector(".card").style.display = "block";
+    }, 2800);
+  </script>
+
+</body>
+</html>
